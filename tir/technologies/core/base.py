@@ -858,7 +858,7 @@ class Base(unittest.TestCase):
         """
         print("Starting the browser")
         if os.name == 'posix':
-            gecko_path = 'drivers/ubuntu/geckodriver'
+            gecko_path = 'drivers/linux/geckodriver'
         else: 
             gecko_path = r'drivers\\geckodriver.exe'
 
