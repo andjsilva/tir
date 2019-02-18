@@ -857,8 +857,13 @@ class Base(unittest.TestCase):
         >>> oHelper.Start()
         """
         print("Starting the browser")
+        if os.name == 'posix':
+            gecko_path = 'drivers/ubuntu/geckodriver'
+        else: 
+            gecko_path = r'drivers\\geckodriver.exe'
+
         if self.config.browser.lower() == "firefox":
-            driver_path = os.path.join(os.path.dirname(__file__), r'drivers\\geckodriver.exe')
+            driver_path = os.path.join(os.path.dirname(__file__), gecko_path)
             log_path = os.path.join(os.path.dirname(__file__), r'geckodriver.log')
             options = FirefoxOpt()
             options.set_headless(self.config.headless)
