@@ -4,4 +4,5 @@ include tir/technologies/core/drivers/*.exe
 include tir/technologies/core/data/*.csv
 include tir/technologies/core/third_party/*.py
 include tir/technologies/core/*.py
-include tir/technologies/core/linux/geckodriver
+include tir/technologies/core/drivers/linux/*
+include tir/technologies/core/drivers/linux/geckodriver
