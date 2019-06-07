@@ -878,6 +878,9 @@ class Base(unittest.TestCase):
             options = FirefoxOpt()
             options.set_headless(self.config.headless)
             self.driver = webdriver.Firefox(firefox_options=options, executable_path=driver_path, log_path=log_path)
+            logtxt = open("log_pid.txt", "w")
+            logtxt.write(str(self.driver.service.process.pid))
+            logtxt.close()
         elif self.config.browser.lower() == "chrome":
             driver_path = os.path.join(os.path.dirname(__file__), r'drivers\\chromedriver.exe')
             options = ChromeOpt()
